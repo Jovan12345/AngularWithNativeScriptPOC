@@ -1,0 +1,36 @@
+<ActionBar title="NS with Ang">
+    <StackLayout orientation="horizontal">
+        <Label text="NS with Ang" class="action-label"></Label>
+        <Image src="~/app/images/gecko-logo.png" class="action-image"></Image>
+    </StackLayout>
+</ActionBar>
+<StackLayout>
+    <BottomNavigation>
+        <TabStrip>
+            <TabStripItem>
+                <Label text="List" class="h3"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Add Post" class="h3"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Camera" class="h3"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Location" class="h3"></Label>
+            </TabStripItem>
+        </TabStrip>
+        <TabContentItem>
+            <ns-post-list></ns-post-list>
+        </TabContentItem>
+        <TabContentItem>
+            <ns-create-post></ns-create-post>
+        </TabContentItem>
+        <TabContentItem>
+            <ns-camera></ns-camera>
+        </TabContentItem>
+        <TabContentItem >
+            <ns-location></ns-location>
+        </TabContentItem>
+    </BottomNavigation>
+</StackLayout>

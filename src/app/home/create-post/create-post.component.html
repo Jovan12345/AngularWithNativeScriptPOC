@@ -1,0 +1,11 @@
+<StackLayout>
+    <Label text="Create new post" class="h1"></Label>
+    <hr>
+    <TextField hint="Post Title" autocorrect="true" autocapitalizationType="words" [(ngModel)]="post.title"
+        class="input input-border"></TextField>
+    <TextField hint="Post Body description" autocorrect="true" autocapitalizationType="none" [(ngModel)]="post.body"
+        class="input input-border"></TextField>
+    <TextField hint="User id" keyboardType="integer" autocorrect="false" [(ngModel)]="post.userId"
+        class="input input-border"></TextField>
+    <Button class="-primary p-15" text="Add Post" (tap)="addPost()" horizontalAlignment="left"></Button>
+</StackLayout>

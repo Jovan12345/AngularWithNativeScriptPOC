@@ -1,0 +1,22 @@
+<StackLayout>
+    <Label text="Placeholder Photos" class="h1"></Label>
+    <ListView [items]="unsplashAlbum" class="list-group" height="550">
+        <ng-template let-item="item">
+            <GridLayout columns="100,*" class="list-group-item">
+                <Image [src]='item.urls.small' class="img-rounded" col="0" loadMode="async"></Image>
+                <Label
+                    [text]='item.description ? item.description : (item.alt_description ? item.alt_description : item.user.name)'
+                    class="t-16" verticalAlignment="center" textWrap="true" col="1"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+    <StackLayout orientation="horizontal">
+        <Button text="Prev" (tap)="getPaginatedUnsplashedList('prev')" class="btn btn-outline-dark"
+            [visibility]="loadingImages ? 'collapse' : 'visible'" [isEnabled]="page <= 1 ? false : true"></Button>
+        <Button text="Next" (tap)="getPaginatedUnsplashedList('next')" class="btn btn-outline-dark"
+            [visibility]="loadingImages ? 'collapse' : 'visible'"></Button>
+    </StackLayout>
+
+</StackLayout>
+<ActivityIndicator [busy]="loadingImages" [visibility]="loadingImages ? 'visible' : 'collapse'" row="1"
+    horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
